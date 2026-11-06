@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilverwaltung</title>
+    <link rel="stylesheet" href="profile-style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header-nav">
+            <a href="index.html" class="btn btn-secondary">← Zurück zur Kachelübersicht</a>
+            <h1 id="pageTitle">Profil-Lagerbestand</h1>
+        </div>
+
+        <!-- Filter- & Aktionsleiste -->
+        <div class="action-bar">
+            <input type="text" id="tableSearch" placeholder="Tabelle durchsuchen (z.B. Name)...">
+            <div class="action-buttons" style="display: flex; gap: 10px;">
+
+                <button id="openFormBtn" class="btn btn-primary">+ Neuen Eintrag erstellen</button><a href="admin.html"
+                    class="btn btn-secondary">⚙️ Admin</a>
+            </div>
+        </div>
+
+        <!-- Dynamisches Formular (wird für Erstellen und Bearbeiten genutzt) -->
+        <div id="formContainer" class="form-card" style="display: none;">
+            <h3 id="formTitle">Neuen Eintrag anlegen</h3>
+            <form id="profileForm">
+                <input type="hidden" id="editIndex">
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="p_code">Code (Filter)</label>
+                        <input type="text" id="p_code" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="p_name">Profilname</label>
+                        <input type="text" id="p_name" required placeholder="z.B. HEA 140">
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="p_breite">Breite (mm)</label>
+                        <input type="number" id="p_breite" required min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="p_hoehe">Höhe (mm)</label>
+                        <input type="number" id="p_hoehe" required min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="p_laenge">Länge (mm)</label>
+                        <input type="number" id="p_laenge" required min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="p_anzahl">Anzahl (Stk)</label>
+                        <input type="number" id="p_anzahl" required min="0">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelFormBtn" class="btn btn-secondary">Abbrechen</button>
+                    <button type="submit" class="btn btn-success">Speichern</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Datentabelle -->
+        <div class="table-responsive">
+            <table id="profileTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Profilname</th>
+                        <th>Breite</th>
+                        <th>Höhe</th>
+                        <th>Länge</th>
+                        <th>Anzahl</th>
+                        <th>Aktionen</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Zeilen werden dynamisch generiert -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="profile-script.js"></script>
+</body>
+
+</html>

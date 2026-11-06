@@ -1,0 +1,42 @@
+[
+  {
+    "code": "HEA",
+    "profilname": "HEA 100",
+    "breite": 100,
+    "hoehe": 96,
+    "laenge": 6000,
+    "anzahl": 12
+  },
+  {
+    "code": "HEA",
+    "profilname": "HEA 120",
+    "breite": 120,
+    "hoehe": 114,
+    "laenge": 12000,
+    "anzahl": 8
+  },
+  {
+    "code": "HEB",
+    "profilname": "HEB 100",
+    "breite": 100,
+    "hoehe": 100,
+    "laenge": 6000,
+    "anzahl": 5
+  },
+  {
+    "code": "HEM",
+    "profilname": "HEM 100",
+    "breite": 100,
+    "hoehe": 120,
+    "laenge": 6000,
+    "anzahl": 3
+  },
+  {
+    "code": "Flacheisen",
+    "profilname": "Flach 50x5",
+    "breite": 50,
+    "hoehe": 5,
+    "laenge": 4000,
+    "anzahl": 45
+  }
+]

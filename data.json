@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "text": "Träger",
+    "icon": "HEA",
+    "sub": [
+      { "sid": 1, "text": "HEA", "icon": "HEA" },
+      { "sid": 2, "text": "HEB", "icon": "HEB" },
+      { "sid": 3, "text": "HEM", "icon": "HEM" },
+      { "sid": 3, "text": "IPE", "icon": "IPE" }
+    ]
+  },
+
+  {
+    "id": 2,
+    "text": "U-Profil",
+    "icon": "U",
+    "sub": [
+      { "sid": 1, "text": "U", "icon": "U" },
+      { "sid": 2, "text": "UPE", "icon": "UPE" },
+      { "sid": 3, "text": "UPN", "icon": "UPN" }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Winkel",
+    "icon": "Winkel",
+    "sub": [
+      { "sid": 1, "text": "Winkel-gleich", "icon": "Winkel" },
+      { "sid": 1, "text": "Winkel-ungleich", "icon": "WinkelU" }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Flacheisen",
+    "icon": "Flach",
+    "sub": [{ "sid": 1, "text": "Flacheisen", "icon": "Flach" }]
+  },
+  {
+    "id": 5,
+    "text": "Rund-Rohr",
+    "icon": "Rundrohr",
+    "sub": [{ "sid": 1, "text": "Rohr", "icon": "Rundrohr" }]
+  },
+  {
+    "id": 6,
+    "text": "Rechteck-Rohr",
+    "icon": "hohlprofile",
+    "sub": [
+      { "sid": 1, "text": "Rechteck-Rohr", "icon": "rr-hohlprofile" },
+      { "sid": 1, "text": "Quadrat-Rohr", "icon": "hohlprofile" }
+    ]
+  },
+  {
+    "id": 7,
+    "text": "Rundstahl",
+    "icon": "rundstahl",
+    "sub": [{ "sid": 1, "text": "Rundstahl", "icon": "Rundstahl" }]
+  },
+  {
+    "id": 8,
+    "text": "Vierkant",
+    "icon": "Vk",
+    "sub": [{ "sid": 1, "text": "Vierkant", "icon": "vk" }]
+  },
+  {
+    "id": 9,
+    "text": "T-Profil",
+    "icon": "T-Profil",
+    "sub": [{ "sid": 1, "text": "T-Profil", "icon": "T-Profil" }]
+  },
+  {
+    "id": 10,
+    "text": "Sonderprofile",
+    "icon": "Klöckner",
+    "sub": [
+      { "sid": 1, "text": "Klöckner", "icon": "Klöckner" },
+      { "sid": 1, "text": "U", "icon": "u-profil" },
+      { "sid": 1, "text": "Z-Profil", "icon": "Z-profil" }
+    ]
+  }
+]

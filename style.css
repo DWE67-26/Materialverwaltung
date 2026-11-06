@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+body {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Basis-Grid-Einstellung: Standardmäßig 4 Spalten für große Bildschirme */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Mehr Platz für Text im Breitbild-Modus */
+}
+
+/* Styling für die einzelnen Kacheln */
+.tile {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    cursor: pointer;
+    border: 1px solid #e1e4e8;
+    aspect-ratio: 1 / 1; /* Hält jede Kachel einzeln quadratisch */
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-color: #0070f3;
+}
+
+/* Icon-Styling */
+.tile i {
+    color: #0070f3;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}
+
+/* Text-Styling */
+.tile span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    word-break: break-word; /* Verhindert Text-Überlauf auf kleinen Bildschirmen */
+}
+
+/* Platzhalter für leere Kacheln */
+.tile.empty {
+    background-color: rgba(0, 0, 0, 0.02);
+    border: 2px dashed #cbd5e1;
+    box-shadow: none;
+    cursor: default;
+}
+.tile.empty:hover {
+    transform: none;
+    border-color: #cbd5e1;
+}
+/* ... Ihr bisheriges CSS bleibt gleich, nur dieser Bereich ändert sich leicht: ... */
+
+/* Container für das SVG-Icon */
+.tile .icon-container {
+    color: #0070f3;
+    width: 50%;
+    height: 50%;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sorgt dafür, dass die geladene SVG-Datei die richtige Größe annimmt */
+.tile .icon-container svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor; /* Übernimmt das Blau von .icon-container */
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+/* ... Ihr bisheriges CSS für .grid-container, .tile etc. bleibt gleich ... */
+
+/* Spezielles Styling für die Zurück-Kachel am Ende */
+.tile.back-tile {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.tile.back-tile .icon-container {
+    color: #64748b; /* Graues Icon für den Zurück-Button */
+}
+
+.tile.back-tile span {
+    color: #64748b;
+}
+
+.tile.back-tile:hover {
+    border-color: #64748b;
+    background-color: #e2e8f0;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Für die Smartphone-Ansicht (falls vorhanden) */
+@media (max-width: 480px) {
+    .tile .icon-container {
+        margin-bottom: 0;
+        margin-right: 16px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.navigation-bar {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back-btn {
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+/* ==========================================================================
+   Media Queries für Responsivität
+   ========================================================================== */
+
+/* Tablets im Querformat / kleinere Monitore (max. 1024px) */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+/* Tablets im Hochformat (max. 768px) */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .tile {
+        padding: 16px;
+    }
+}
+
+/* Smartphones (max. 480px) */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .tile {
+        aspect-ratio: auto; /* Auf Handys quer statt quadratisch */
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 16px 20px;
+        text-align: left;
+    }
+    /* Korrektur: Nutzt jetzt den echten Icon-Container statt des i-Tags */
+    .tile .icon-container {
+        margin-bottom: 0;
+        margin-right: 16px;
+        width: 32px;
+        height: 32px;
+    }
+}
+

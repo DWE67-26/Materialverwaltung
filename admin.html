@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materialverwaltung - Admin Panel</title>
+    <link rel="stylesheet" href="profile-style.css"> <!-- Wir nutzen die vorhandenen Stile -->
+    <style>
+        .admin-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .admin-card h2 {
+            margin-bottom: 15px;
+            color: #1e293b;
+            font-size: 18px;
+        }
+
+        .admin-card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .file-input-wrapper {
+            margin-bottom: 15px;
+        }
+
+        .danger-zone {
+            border-top: 4px solid #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header-nav">
+            <a href="index.html" class="btn btn-secondary">← Zurück zur Kachelübersicht</a>
+            <h1>Admin-Steuerzentrale</h1>
+        </div>
+
+        <!-- Sektion 1: Export & E-Mail-Versand -->
+        <div class="admin-card">
+            <h2>Lagerdaten exportieren / versenden</h2>
+            <p>Sichere den aktuellen Live-Datenbestand auf deinem Computer oder versende die Bestandsliste direkt als
+                E-Mail-Text.</p>
+
+            <!-- NEU: Umschalter für den Umfang -->
+            <div
+                style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                <span
+                    style="font-weight: 600; font-size: 14px; display: block; margin-bottom: 8px; color: #475569;">Umfang
+                    für den E-Mail-Versand wählen:</span>
+                <label style="margin-right: 20px; font-size: 14px; cursor: pointer;">
+                    <input type="radio" name="emailScope" value="all" checked style="margin-right: 5px;"> Gesamte Liste
+                    versenden
+                </label>
+                <label style="font-size: 14px; cursor: pointer;">
+                    <input type="radio" name="emailScope" value="filtered" style="margin-right: 5px;"> Nur aktuellen
+                    Filterbereich wählen...
+                </label>
+
+                <!-- Dynamisches Dropdown, das erscheint wenn "nur Bereich" gewählt ist -->
+                <div id="filterScopeSelectWrapper" style="display: none; margin-top: 10px;">
+                    <label for="emailFilterCode" style="font-size: 13px; color: #64748b;">Welcher Bereich
+                        (Code)?</label>
+                    <select id="emailFilterCode"
+                        style="padding: 6px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 14px; margin-left: 5px;">
+                        <!-- Wird per JS dynamisch befüllt -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Aktions-Buttons -->
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button id="adminExportBtn" class="btn btn-primary">💾 Daten als JSON exportieren</button>
+                <button id="adminEmailBtn" class="btn" style="background-color: #0284c7; color: white;">✉️ Als E-Mail
+                    versenden</button>
+            </div>
+        </div>
+
+
+        <!-- Sektion 2: Import -->
+        <div class="admin-card">
+            <h2>Lagerdaten importieren</h2>
+            <p>Lade eine zuvor exportierte oder manuell bearbeitete <code>profile_data.json</code> hoch.
+                <strong>Achtung:</strong> Dies überschreibt den aktuellen Speicherstand im Browser!
+            </p>
+            <div class="file-input-wrapper">
+                <input type="file" id="importFile" accept=".json">
+            </div>
+            <button id="adminImportBtn" class="btn btn-success">📤 Datei einlesen & speichern</button>
+        </div>
+
+        <!-- Sektion 3: Gefahrenbereich -->
+        <div class="admin-card danger-zone">
+            <h2>Speicher zurücksetzen</h2>
+            <p>Löscht alle lokalen Änderungen im Browser und stellt den ursprünglichen Werkszustand aus der
+                Server-Quelldatei wieder her.</p>
+            <button id="resetStorageBtn" class="btn btn-danger">⚠️ Browser-Speicher leeren</button>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+
+</html>
