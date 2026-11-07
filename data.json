@@ -18,7 +18,7 @@
     "sub": [
       { "sid": 1, "text": "U", "icon": "U" },
       { "sid": 2, "text": "UPE", "icon": "UPE" },
-      { "sid": 3, "text": "UPN", "icon": "UPN" }
+      { "sid": 3, "text": "UPN", "icon": "Upn" }
     ]
   },
   {
@@ -55,7 +55,7 @@
     "id": 7,
     "text": "Rundstahl",
     "icon": "rundstahl",
-    "sub": [{ "sid": 1, "text": "Rundstahl", "icon": "Rundstahl" }]
+    "sub": [{ "sid": 1, "text": "Rundstahl", "icon": "rundstahl" }]
   },
   {
     "id": 8,
@@ -75,8 +75,8 @@
     "icon": "Klöckner",
     "sub": [
       { "sid": 1, "text": "Klöckner", "icon": "Klöckner" },
-      { "sid": 1, "text": "U", "icon": "u-profil" },
-      { "sid": 1, "text": "Z-Profil", "icon": "Z-profil" }
+      { "sid": 1, "text": "U", "icon": "U-Profil" },
+      { "sid": 1, "text": "Z-Profil", "icon": "Z-Profil" }
     ]
   }
 ]
