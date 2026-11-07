@@ -39,8 +39,8 @@
   {
     "id": 5,
     "text": "Rund-Rohr",
-    "icon": "Rundrohr",
-    "sub": [{ "sid": 1, "text": "Rohr", "icon": "Rundrohr" }]
+    "icon": "RundRohr",
+    "sub": [{ "sid": 1, "text": "Rohr", "icon": "RundRohr" }]
   },
   {
     "id": 6,
@@ -60,8 +60,8 @@
   {
     "id": 8,
     "text": "Vierkant",
-    "icon": "Vk",
-    "sub": [{ "sid": 1, "text": "Vierkant", "icon": "vk" }]
+    "icon": "VK",
+    "sub": [{ "sid": 1, "text": "Vierkant", "icon": "VK" }]
   },
   {
     "id": 9,
