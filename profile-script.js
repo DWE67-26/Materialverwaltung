@@ -10,6 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const pCodeInput = document.getElementById("p_code");
     if (pageTitle) pageTitle.innerText = `Lagerbestand: ${currentCode}`;
     if (pCodeInput) pCodeInput.value = currentCode;
+
+    // NEU: Sucht nach deinem Admin-Button und hängt den aktuellen Code an den Link an
+    // (Falls dein Button ein <a>-Tag ist, passen wir das href-Attribut an)
+    const adminButtons = document.querySelectorAll("a, button");
+    adminButtons.forEach((btn) => {
+      if (btn.textContent.includes("Admin") || btn.id === "goToAdminBtn") {
+        // Falls es ein Link (<a>) ist:
+        if (btn.tagName.toLowerCase() === "a") {
+          btn.href = `admin.html?code=${encodeURIComponent(currentCode)}`;
+        }
+        // Falls es ein <button> mit Klick-Event ist:
+        else {
+          btn.addEventListener("click", () => {
+            window.location.href = `admin.html?code=${encodeURIComponent(currentCode)}`;
+          });
+        }
+      }
+    });
   }
 
   initializeData();
@@ -118,11 +136,7 @@ function renderTable() {
                     <button class="btn-qty" onclick="changeQuantity(${globalIndex}, 1)">+</button>
                 </div>
             </td>
-            <td>
-                <button class="btn btn-edit" onclick="editEintrag(${globalIndex})">Ändern</button>
-                <button class="btn btn-danger" onclick="deleteEintrag(${globalIndex})">Löschen</button>
-            </td>
-        `;
+                   `;
     tbody.appendChild(tr);
   });
 }
